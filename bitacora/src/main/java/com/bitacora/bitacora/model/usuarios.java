@@ -4,15 +4,15 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public class UserModel {
-    @Id
-    private String empNum;
+public class usuarios {
+
+    private @Id String numEmp;
     private String nombre;
     private String apellidos;
 
     //Elementos set
     public void setEmpNum(String empNum){
-        this.empNum = empNum;
+        this.numEmp = empNum;
     }
 
     public void setNombre(String nombre){
@@ -26,7 +26,7 @@ public class UserModel {
     //Elementos get
 
     public String getEmpNum(){
-        return this.empNum;
+        return this.numEmp;
     }
 
     public String getNombre(){
@@ -37,7 +37,7 @@ public class UserModel {
         return this.apellidos;
     }
 
-    public UserModel(){
+    public usuarios(){
 
     }
 }
