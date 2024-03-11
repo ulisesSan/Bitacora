@@ -23,3 +23,4 @@ create table bitacora(
 
 alter table bitacora add foreign key (numEmp) references usuario(numEmp) on delete cascade on update cascade;
 alter table bitacora add foreign key (idServ) references catServ(id) on delete cascade on update cascade;
+
