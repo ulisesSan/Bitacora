@@ -10,4 +10,6 @@ public class BitacoraApplication {
 		SpringApplication.run(BitacoraApplication.class, args);
 	}
 
+	//docker exec -it Bitacora bash
+	//mysql -u root -p
 }
