@@ -9,14 +9,14 @@ import { Usuarios } from '../../interface/usuarios';
   templateUrl: './usuarios.component.html',
   styleUrl: './usuarios.component.css'
 })
-export class UsuariosComponent implements OnInit{
+export class UsuariosComponent {//
 
   Usuarios: Usuarios[] = [];
 
   constructor(private usuariosService : UsuariosService){}
-  ngOnInit(): void {
-      this.getUsuarios()
-  }
+  //ngOnInit(): void {
+    //  this.getUsuarios()
+  //}
 
   getUsuarios(){
     this.usuariosService.getUsers().subscribe({
