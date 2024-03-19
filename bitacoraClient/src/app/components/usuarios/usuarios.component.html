@@ -1,1 +1,19 @@
-<p>usuarios works!</p>
+<div class="row">
+        <div class="col-md-4" *ngFor="let usr of Usuarios">
+            <div class="card text-center">
+                <div class="card-header">
+                    <p hidden="false">{{usr.numEmp}}</p>
+                    <h3 class="h4 mb-1"> {{usr.nombre}}</h3>
+                </div>
+                <div class="card-body">
+                    <p class="h5">{{usr.nombre}} {{usr.apellidos}}</p>
+                    <button class="btn-success"> Info </button>
+                    <p>  </p>
+                    <!--<button [routerLink]="['/usuario-form/edit', usr.id_usuario]" class="btn btn-warning">Modificar</button>-->
+                </div>
+            </div>
+        </div>
+        <div class="col_md_4">
+           <!-- <button [routerLink]="['/usuario-form']" routerLinkActive="active" class="btn btn-success">Agregar Usuario</button> -->
+        </div>
+    </div>

@@ -9,9 +9,9 @@ export class UsuariosService {
 
   constructor(private httpClient: HttpClient) { }
 
-  API_URL : string = "http://localhost:4200";
+  API_URL : string = "http://localhost:8080";
 
   getUsers(): Observable<any>{
-  return this.httpClient.get(this.API_URL).pipe(res => res)
+  return this.httpClient.get(this.API_URL+"/users/getusers").pipe(res => res)
   }
 }
