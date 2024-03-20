@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Usuarios } from '../interface/usuarios';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,11 @@ export class UsuariosService {
 
   API_URL : string = "http://localhost:8080";
 
-  getUsers(): Observable<any>{
-  return this.httpClient.get(this.API_URL+"/users/getusers").pipe(res => res)
+  getUsers(): Observable<Usuarios>{
+  return this.httpClient.get<Usuarios>(this.API_URL+"/users/getusers").pipe(res => res)
+  }
+
+  addUser(user: Usuarios):Observable<Usuarios>{
+    return this.httpClient.post<Usuarios>(this.API_URL+"/users/addUser", user)
   }
 }

@@ -4,7 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public class usuarios {
+public class usuario {
 
     private @Id String numEmp;
     private String nombre;
@@ -37,7 +37,7 @@ public class usuarios {
         return this.apellidos;
     }
 
-    public usuarios(){
+    public usuario(){
 
     }
 }
