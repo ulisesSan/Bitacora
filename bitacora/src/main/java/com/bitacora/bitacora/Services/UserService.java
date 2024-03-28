@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 @Service
 public class UserService {
-    @Autowired
+    @Autowired(required = false)
     UserRepository uRepo;
 
     public ArrayList<usuario> getUsers(){

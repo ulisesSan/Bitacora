@@ -9,6 +9,7 @@ public class usuario {
     private @Id String numEmp;
     private String nombre;
     private String apellidos;
+    private String passwd;
 
     //Elementos set
     public void setEmpNum(String empNum){
@@ -22,6 +23,7 @@ public class usuario {
     public void setApellidos(String apellidos){
         this.apellidos = apellidos;
     }
+    public void setPasswd(String pass){ this.passwd = pass; }
 
     //Elementos get
 
@@ -37,7 +39,8 @@ public class usuario {
         return this.apellidos;
     }
 
-    public usuario(){
+    public String getPasswd(){ return this.passwd; }
+    public usuario(){}
 
-    }
+    public usuario(String numEmp, String nombre, String apellidos, String passwd){}
 }
