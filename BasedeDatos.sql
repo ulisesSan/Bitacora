@@ -2,10 +2,12 @@ create table usuario(
 num_Emp varchar(10) primary key,
 Nombre varchar(50),
 apellidos varchar(100),
-passwd text);
+passwd text
+fechPass date,
+boss int);
 
 create table catServ(
- id int primary key, 
+id int primary key, 
 nombre varchar(15), 
 criticidad varchar(10), 
 impacto text);
