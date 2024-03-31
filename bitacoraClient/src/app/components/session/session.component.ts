@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { setCookie } from 'typescript-cookie'
 
 @Component({
   selector: 'app-session',
@@ -21,6 +22,7 @@ export class SessionComponent {
     this.userService.getInitUsers(this.numEmp,this.passwd).subscribe(
       res =>{
         if (res){
+          setCookie('Init','1')
           this.rutas.navigate(['/bitacora'])
         }
         else{
