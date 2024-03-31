@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
-import { userInit } from 'src/app/Models/Usuario';
-
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-session',
@@ -9,13 +8,30 @@ import { userInit } from 'src/app/Models/Usuario';
   styleUrls: ['./session.component.css']
 })
 export class SessionComponent {
-  constructor(private userService: UsersService){}
+  constructor(private userService: UsersService, private rutas: Router, private rutaActiva: ActivatedRoute){}
 
-  user = {
-    numEmp: '14',
-    passwd: '14'} as userInit;
+  numEmp: string = "";
+  passwd: string = "";
 
   ngOnInit(){
-    
+
+  }
+
+  initUser(){
+    this.userService.getInitUsers(this.numEmp,this.passwd).subscribe(
+      res =>{
+        if (res){
+          this.rutas.navigate(['/bitacora'])
+        }
+        else{
+          alert("Usuario o contraseña incorrectos");
+          
+        }
+      },
+      err => {
+        console.log(err)
+      }
+    )
+    console.log("Info agregada " +  this.numEmp + ' ' +  this.passwd)
   }
 }

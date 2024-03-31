@@ -1,18 +1,22 @@
-import { NgModule } from '@angular/core';
+import { NgModule,Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SessionComponent } from './components/session/session.component';
 import { BitacoraComponent } from './components/bitacora/bitacora.component';
+import { SessionComponent } from './components/session/session.component';
 
 
 const routes: Routes = [
   {
-    path:'',
-    redirectTo:'session',
-    pathMatch: 'full'
+    path:'session',
+    component: SessionComponent
   },
   {
     path:"bitacora",
     component: BitacoraComponent
+  },
+  {
+    path:'**',
+    redirectTo: 'session',
+    pathMatch: "full"
   }
 ];
 
