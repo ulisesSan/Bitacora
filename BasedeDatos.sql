@@ -14,15 +14,15 @@ impacto text);
 
 create table bitacora(
 num_Emp varchar(10),
-diaSem int,
+dia_Sem int,
 folio varchar(10),
-idServ int,
+id_Serv int,
 fechIni datetime,
-fechFin datetime,
-timSol int,
+fech_Fin datetime,
+tim_Sol int,
 estatus varchar(20),
-timDev int,
-descTarea text);
+tim_Dev int,
+desc_Tarea text);
 
 alter table bitacora add foreign key (num_Emp) references usuario(num_Emp) on delete cascade on update cascade;
 alter table bitacora add foreign key (idServ) references catServ(id) on delete cascade on update cascade;
