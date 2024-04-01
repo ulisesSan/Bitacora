@@ -10,15 +10,17 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.logging.Logger;
 
-@CrossOrigin(origins = "http://localhost:4200")
+
 @RestController
 @RequestMapping("/bitacora")
 public class binnacleController {
     Logger log = Logger.getLogger(UserController.class.getName());
     @Autowired
     binnacleRepository bitRepo;
-    //@Autowired
-    //binnacleService bitService;
+    @Autowired
+    binnacleService bitService;
+
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(value = "/getbitacora")
     public ResponseEntity<ArrayList<binnacleModel>> getBitacora(@RequestParam(value = "Num") String Num){
         return ResponseEntity

@@ -1,1 +1,46 @@
-<p>bitacora works!</p>
+<p-table  [value]="infoBitacora"  styleClass="p-datatable-gridlines" [tableStyle]="{ 'min-width': '50rem' }" >
+  <ng-template pTemplate="header" let-columns>
+      <tr>
+          <th>Día</th>
+          <th>Folio</th>
+          <th>Categoria Servcio</th>
+          <th>Fecha Inicio</th>
+          <th>Fecha Fin</th>
+          <th>Tiempo de solucion</th>
+          <th>Estatus</th>
+          <th>Tiempo de desarrollo</th>
+          <th>Descripcion de la tarea</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowData let-columns="columns" let-editing="editing">
+      <tr>
+          <td *ngFor="let col of infoBitacora">
+            {{ col.diaSem }}
+          </td>
+          <td *ngFor="let col of infoBitacora">
+            {{ col.folio }}
+          </td>
+          <td *ngFor="let col of infoBitacora">
+            {{ col.idServ }}
+          </td>
+          <td *ngFor="let col of infoBitacora">
+            {{ col.fechIni }}
+          </td>
+          <td *ngFor="let col of infoBitacora">
+            {{ col.fechFin }}
+          </td>
+          <td *ngFor="let col of infoBitacora">
+            {{ col.timSol }}
+          </td>
+          <td *ngFor="let col of infoBitacora">
+            {{ col.estatus }}
+          </td>
+          <td *ngFor="let col of infoBitacora">
+            {{ col.timDev }}
+          </td>
+          <td *ngFor="let col of infoBitacora">
+            {{ col.descTarea }}
+          </td>
+      </tr>
+  </ng-template>
+</p-table>

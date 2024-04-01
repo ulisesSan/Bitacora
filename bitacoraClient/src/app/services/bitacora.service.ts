@@ -11,7 +11,7 @@ export class BitacoraService {
   constructor(private http:HttpClient) { }
 
   getBitacora(numEmp: string){
-    return this.http.get(`${this.API_URI}/bitacora/getitacora?Num=${numEmp}`)
+    return this.http.get(`${this.API_URI}/bitacora/getbitacora?Num=${numEmp}`)
   }
 
 }
